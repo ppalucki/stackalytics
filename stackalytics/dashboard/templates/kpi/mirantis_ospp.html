@@ -1,0 +1,271 @@
+{% extends "kpi/base_kpi.html" %}
+
+{% block title %}
+    Mirantis OSPP KPI report
+{% endblock %}
+
+{% block content %}
+    <h1>Mirantis OSPP KPI report</h1>
+
+    <script type="text/javascript">
+        var month_ago = Math.round(new Date().getTime() / 1000) - 30 * 24 * 60 * 60;
+    </script>
+
+    <h2>MagnetoDB</h2>
+
+    <h3>Ilya Sviridov</h3>
+    <div id="isviridov"></div>
+    <script type="text/javascript">
+        goal_metric("isviridov", {release: "all", metric: "marks", project_type: "all", module: "magnetodb", start_date: month_ago},
+                "engineers", "isviridov", 50, "Do 50 reviews per month");
+
+        goal_metric("isviridov", {metric: "bpd", project_type: "all", module: "magnetodb"},
+                "engineers", "isviridov", 5, "File 5 blueprints in the current release");
+
+        goal_metric("isviridov", {metric: "commits", project_type: "all", module: "magnetodb"},
+                "engineers", "isviridov", 20, "Do 20 commits in the current release");
+
+    </script>
+
+    <h3>Dmitriy Ukhlov</h3>
+    <div id="dukhlov"></div>
+    <script type="text/javascript">
+        goal_metric("dukhlov", {release: "all", metric: "marks", project_type: "all", module: "magnetodb", start_date: month_ago},
+                "engineers", "dukhlov", 50, "Do 50 reviews per month");
+
+        goal_metric("dukhlov", {metric: "bpc", project_type: "all", module: "magnetodb"},
+                "engineers", "dukhlov", 5, "Implement 5 blueprints in the current release");
+
+        goal_metric("dukhlov", {metric: "emails", project_type: "all", module: "magnetodb"},
+                "engineers", "dukhlov", 5, "Write 5 emails in the current release");
+
+    </script>
+
+    <h3>Illia Khudoshyn</h3>
+    <div id="ikhudoshyn"></div>
+    <script type="text/javascript">
+        goal_metric("ikhudoshyn", {release: "all", metric: "marks", project_type: "all", module: "magnetodb", start_date: month_ago},
+                "engineers", "ikhudoshyn", 50, "Do 50 reviews per month");
+
+        goal_metric("ikhudoshyn", {metric: "bpc", project_type: "all", module: "magnetodb"},
+                "engineers", "ikhudoshyn", 5, "Implement 5 blueprints in the current release");
+
+        goal_metric("ikhudoshyn", {metric: "emails", project_type: "all", module: "magnetodb"},
+                "engineers", "ikhudoshyn", 5, "Write 5 emails in the current release");
+
+    </script>
+
+
+    <h2>Trove (Database Service)</h2>
+
+    <h3>Denis Makogon</h3>
+    <div id="dmakogon"></div>
+    <script type="text/javascript">
+        goal_metric("dmakogon", {release: "all", metric: "marks", project_type: "all", module: "trove-group", start_date: month_ago},
+                "engineers", "dmakogon", 50, "Do 50 reviews per month");
+
+        goal_metric("dmakogon", {metric: "bpc", project_type: "all", module: "trove-group"},
+                "engineers", "dmakogon", 4, "Implement 4 blueprints in the current release");
+
+        goal_position_in_top("dmakogon", {metric: "commits", module: "trove-group"},
+                "engineers", "dmakogon", 2, "Become top 2 committer");
+    </script>
+
+
+    <h2>Heat (Orchestration)</h2>
+
+    <h3>Pavlo Shchelokovskyy</h3>
+    <div id="pshchelo"></div>
+    <script type="text/javascript">
+        goal_metric("pshchelo", {metric: "bpd", project_type: "all", module: "heat-group"},
+                "engineers", "pshchelo", 3, "Register 3 blueprints in the current release");
+
+        goal_metric("pshchelo", {metric: "bpc", project_type: "all", module: "heat-group"},
+                "engineers", "pshchelo", 3, "Implement 3 blueprints in the current release");
+
+        goal_position_in_top("pshchelo", {metric: "commits", module: "heat-group"},
+                "engineers", "pshchelo", 5, "Enter top-5 by overall commits in the current release");
+
+        goal_disagreement_ratio_less_than("pshchelo", {metric: "marks", project_type: "all", module: "heat-group"},
+                "pshchelo", 0.1, "Decrease reviews Disagreements ratio below 10%");
+
+        goal_position_in_top("pshchelo", {metric: "marks", module: "heat-group"},
+                "engineers", "pshchelo", 5, "Stay top-5 by reviews in the current release");
+    </script>
+
+
+    <h2>Sahara (Data Processing Service)</h2>
+
+    <h3>Alexander Ignatov</h3>
+    <div id="aignatov"></div>
+    <script type="text/javascript">
+        goal_metric("aignatov", {release: "all", metric: "marks", project_type: "all", module: "sahara-group", start_date: month_ago},
+                "engineers", "aignatov", 150, "Do 150 reviews per month");
+
+        goal_metric("aignatov", {release: "all", metric: "commits", project_type: "all", module: "sahara-group", start_date: month_ago},
+                "engineers", "aignatov", 10, "Do 10 commits per month");
+    </script>
+
+    <h3>Sergey Lukjanov</h3>
+    <div id="slukjanov"></div>
+    <script type="text/javascript">
+        goal_metric("slukjanov", {release: "all", metric: "marks", project_type: "all", module: "sahara-group", start_date: month_ago},
+                "engineers", "slukjanov", 150, "Do 150 reviews per month");
+
+        goal_metric("slukjanov", {release: "all", metric: "commits", project_type: "all", module: "sahara-group", start_date: month_ago},
+                "engineers", "slukjanov", 10, "Do 10 commits per month");
+    </script>
+
+    <h3>Sergey Reshetniak</h3>
+    <div id="sreshetniak"></div>
+    <script type="text/javascript">
+        goal_metric("sreshetniak", {release: "all", metric: "marks", project_type: "all", module: "sahara-group", start_date: month_ago},
+                "engineers", "sreshetniak", 60, "Do 60 reviews per month");
+
+        goal_metric("sreshetniak", {release: "all", metric: "commits", project_type: "all", module: "sahara-group", start_date: month_ago},
+                "engineers", "sreshetniak", 5, "Do 5 commits per month");
+    </script>
+
+    <h3>Yaroslav Lobankov</h3>
+    <div id="ylobankov"></div>
+    <script type="text/javascript">
+        goal_metric("ylobankov", {release: "all", metric: "marks", project_type: "all", module: "sahara-group", start_date: month_ago},
+                "engineers", "ylobankov", 40, "Do 40 reviews per month");
+
+        goal_metric("ylobankov", {release: "all", metric: "commits", project_type: "all", module: "sahara-group", start_date: month_ago},
+                "engineers", "ylobankov", 5, "Do 5 commits per month");
+    </script>
+
+
+    <h2>Storyboard</h2>
+
+    <h3>Nikita Konovalov</h3>
+    <div id="nkonovalov"></div>
+    <script type="text/javascript">
+        goal_metric("nkonovalov", {release: "all", metric: "marks", project_type: "all", module: "storyboard,storyboard-webclient", start_date: month_ago},
+                "engineers", "nkonovalov", 30, "Do 30 reviews per month");
+
+        goal_metric("nkonovalov", {release: "all", metric: "commits", project_type: "all", module: "storyboard,storyboard-webclient", start_date: month_ago},
+                "engineers", "nkonovalov", 10, "Do 10 commits per month");
+
+        goal_core_engineer_in_project("nkonovalov", "nkonovalov", "storyboard", "Gain core position");
+    </script>
+
+
+    <h2>Murano</h2>
+
+    <h3>Ruslan Kamaldinov</h3>
+    <div id="ruhe"></div>
+    <script type="text/javascript">
+        goal_metric("ruhe", {release: "all", metric: "marks", project_type: "all", module: "murano-group", start_date: month_ago},
+                "engineers", "ruhe", 90, "Do 90 reviews per month");
+
+        goal_metric("ruhe", {release: "all", metric: "commits", project_type: "all", module: "murano-group", start_date: month_ago},
+                "engineers", "ruhe", 5, "Do 5 commits per month");
+
+        goal_metric("ruhe", {metric: "emails", project_type: "all", module: "murano"},
+                "engineers", "ruhe", 12, "Send 12 emails in the current release");
+
+        goal_position_in_top("ruhe", {metric: "marks", project_type: "all", module: "murano-group"},
+                "engineers", "ruhe", 2, "Become top-2 by reviews in the current release");
+    </script>
+
+    <h3>Stan Lagun</h3>
+    <div id="slagun"></div>
+    <script type="text/javascript">
+        goal_metric("slagun", {release: "all", metric: "marks", project_type: "all", module: "murano-group", start_date: month_ago},
+                "engineers", "slagun", 60, "Do 60 reviews per month");
+
+        goal_metric("slagun", {release: "all", metric: "commits", project_type: "all", module: "murano-group", start_date: month_ago},
+                "engineers", "slagun", 6, "Do 6 commits per month");
+
+        goal_metric("slagun", {release: "all", metric: "emails", project_type: "all", module: "murano", start_date: month_ago},
+                "engineers", "slagun", 4, "Send 4 emails per month");
+    </script>
+
+    <h3>Timur Sufiev</h3>
+    <div id="tsufiev"></div>
+    <script type="text/javascript">
+        goal_metric("tsufiev", {release: "all", metric: "marks", project_type: "all", module: "murano-group", start_date: month_ago},
+                "engineers", "tsufiev-x", 90, "Do 90 reviews per month");
+
+        goal_metric("tsufiev", {release: "all", metric: "commits", project_type: "all", module: "murano-group", start_date: month_ago},
+                "engineers", "tsufiev-x", 8, "Do 8 commits per month");
+
+        goal_metric("tsufiev", {release: "all", metric: "emails", project_type: "all", module: "murano", start_date: month_ago},
+                "engineers", "tsufiev-x", 2, "Send 2 emails per month");
+    </script>
+
+    <h3>Sergey Melikyan</h3>
+    <div id="smelikyan"></div>
+    <script type="text/javascript">
+        goal_metric("smelikyan", {release: "all", metric: "marks", project_type: "all", module: "murano-group", start_date: month_ago},
+                "engineers", "smelikyan", 60, "Do 60 reviews per month");
+
+        goal_metric("smelikyan", {release: "all", metric: "commits", project_type: "all", module: "murano-group", start_date: month_ago},
+                "engineers", "smelikyan", 5, "Do 5 commits per month");
+
+        goal_metric("smelikyan", {release: "all", metric: "emails", project_type: "all", module: "murano", start_date: month_ago},
+                "engineers", "smelikyan", 3, "Send 3 emails per month");
+    </script>
+
+    <h3>Ekaterina Fedorova</h3>
+    <div id="efedorova"></div>
+    <script type="text/javascript">
+        goal_metric("efedorova", {release: "all", metric: "marks", project_type: "all", module: "murano-group", start_date: month_ago},
+                "engineers", "efedorova", 50, "Do 50 reviews per month");
+
+        goal_metric("efedorova", {release: "all", metric: "commits", project_type: "all", module: "murano-group", start_date: month_ago},
+                "engineers", "efedorova", 6, "Do 6 commits per month");
+    </script>
+
+    <h3>Alexander Tivelkov</h3>
+    <div id="ativelkov"></div>
+    <script type="text/javascript">
+        goal_metric("ativelkov", {release: "all", metric: "marks", project_type: "all", module: "murano-group", start_date: month_ago},
+                "engineers", "ativelkov", 90, "Do 90 reviews per month");
+
+        goal_metric("ativelkov", {release: "all", metric: "commits", project_type: "all", module: "murano-group", start_date: month_ago},
+                "engineers", "ativelkov", 10, "Do 10 commits per month");
+
+        goal_metric("ativelkov", {metric: "emails", project_type: "all", module: "murano"},
+                "engineers", "ativelkov", 6, "Send 6 emails");
+    </script>
+
+
+    <h2>Mistral</h2>
+
+    <h3>Renat Akhmerov</h3>
+    <div id="rakhmerov"></div>
+    <script type="text/javascript">
+        goal_metric("rakhmerov", {release: "all", metric: "marks", project_type: "all", module: "mistral", start_date: month_ago},
+                "engineers", "rakhmerov", 120, "Do 120 reviews per month");
+
+        goal_metric("rakhmerov", {release: "all", metric: "commits", project_type: "all", module: "mistral", start_date: month_ago},
+                "engineers", "rakhmerov", 4, "Do 4 commits per month");
+
+        goal_metric("rakhmerov", {metric: "bpc", project_type: "all", module: "mistral"},
+                "engineers", "rakhmerov", 4, "Implement 4 blueprints");
+
+        goal_metric("rakhmerov", {metric: "emails", project_type: "all", module: "mistral"},
+                "engineers", "rakhmerov", 12, "Send 12 emails");
+    </script>
+
+    <h3>Nikolay Makhotkin</h3>
+    <div id="nmakhotkin"></div>
+    <script type="text/javascript">
+        goal_metric("nmakhotkin", {release: "all", metric: "marks", project_type: "all", module: "mistral", start_date: month_ago},
+                "engineers", "nmakhotkin", 70, "Do 70 reviews per month");
+
+        goal_metric("nmakhotkin", {release: "all", metric: "commits", project_type: "all", module: "mistral", start_date: month_ago},
+                "engineers", "nmakhotkin", 8, "Do 8 commits per month");
+
+        goal_metric("nmakhotkin", {metric: "bpc", project_type: "all", module: "mistral"},
+                "engineers", "nmakhotkin", 2, "Implement 2 blueprints");
+
+        goal_metric("nmakhotkin", {metric: "emails", project_type: "all", module: "mistral"},
+                "engineers", "nmakhotkin", 3, "Send 3 emails");
+    </script>
+
+
+{% endblock %}
